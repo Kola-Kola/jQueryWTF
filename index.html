@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
 
-    <body>
-        <div class="first">COUCOU</div>
-        <div class="second">HELLO</div>
-        <div class="third">okokokok</div>
-        <script src="app.js"></script>
-        <script>
-            var test = $(".first").html()[1];
-            var i = document.querySelector(".third");
-            i.innerHTML = test
-        </script>
-    </body>
+<body>
+    <div class="first">COUCOU</div>
+    <div class="second">HELLO</div>
+    <div class="third">okokokok</div>
+    <script src="app.js"></script>
+    <script>
+        $(".first").on("click", function (e) {
+            console.log("COUCOUCOUCOU", e);
+        })
+    </script>
+</body>
 
 </html>
