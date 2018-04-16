@@ -53,6 +53,40 @@
     return [this, text];
   };
 
+  /* 
+   *  .on/.off method, return a instance of eventListner with a callback 
+   */
+  lib.prototype.on = function(eventName, callback, e) {
+    if (
+      typeof eventName === "string" &&
+      eventName !== undefined &&
+      typeof callback === "function"
+    ) {
+      this.el[0].addEventListener(eventName, function(e) {
+        callback(e);
+      });
+    }
+    return this;
+  };
+
+  lib.prototype.off = function(eventName, callback) {
+    if (
+      typeof eventName === "string" &&
+      eventName !== undefined &&
+      typeof callback === "function"
+    ) {
+      this.el[0].removeEventListener(eventName, function() {
+        callback();
+      });
+    }
+    return this;
+  };
+
+  lib.prototype.css = function(props, value) {
+    this.el[0].style[props] = value;
+    return this;
+  };
+
   /* Convert NodeList into Array */
   function toArray(arrayLike) {
     var arr = [];
